@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+		<title>Game</title>
+	</head>
+	<body>	
+	<canvas id="myCanvas">
+            Your browser doesn’t support Canvas
+       </canvas>
+	   <div class = "sideDiv">
+	   <p></p>		
+			<span class="h4" id="time">Seconds left: 10</span>
+	   <p></p>		
+			<button type="button" class="btn btn-primary" id = "resetBtn" value = "" disabled onclick="reset()">Reset</button>	
+   <p></p>			
+			<button type="button" class="btn btn-primary" id = "showSolution" value = "" disabled onclick="showSolution()">Show the best solution</button>
+	   <p></p>
+			<button type="button" class="btn btn-primary" id = "nextLevel" value = "" disabled onclick="startLevel()">Next level</button>
+	   <p></p>
+			<button type="button" class="btn btn-primary" id = "newGame" value = ""  onclick="newGame()">New game</button>
+	   <p></p>	
+			<pre id = "task" value="">Connect 4 points in the SHORTEST path
+									  Reach at least 80% accuracy to pass this level</pre>	
+	   <p></p>	
+			<label id = "percent" value="">Accuracy: </label>	
+	   <p></p>	
+			<h4><p id = "score" value="">Your score: 0 </p>	</h4>	
+	   <p></p>	
+			<h4><p id = "highScore" value="">Highscore: </p>	</h4>
+</div>
+	<script src="game.js"></script>
+	</body>
+</html>

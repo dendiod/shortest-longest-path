@@ -1,0 +1,14 @@
+.circle {
+  background: red;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding-left: 6px;
+  behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.sideDiv{
+	float:right;
+}
