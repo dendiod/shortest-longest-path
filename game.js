@@ -73,8 +73,7 @@ function startLevel(){
 	task += isFindingTheShortest ? 'SHORTEST ' : 'LONGEST ';
 	task += 'path\nReach at least ';
 	task += accuracy + '% accuracy to pass this level';
-	document.getElementById('task').innerHTML = task;
-	document.getElementById('resetBtn').disabled = false;
+	document.getElementById('task').innerHTML = task;	
 	
 	timerTick();
 }
@@ -95,11 +94,10 @@ function onCircleClick(e){
 	e.target.style.background = 'blue';
 	let length = playerCirclesIndexes.length;
 	e.target.innerHTML = length;
-	if(length > 1){		
+	if(length > 1){	
+		document.getElementById('resetBtn').disabled = false;	
 		drawLine(playerCirclesIndexes[length-2], playerCirclesIndexes[length-1]);
-		if(length == maxGreen){
-			document.getElementById('resetBtn').disabled = true;
-			document.getElementById('showSolution').disabled = false; 
+		if(length == maxGreen){			
 			let distance = 0;
 			for(let i = 1; i < length;  i++)
 				distance += distances.get(playerCirclesIndexes[i-1] + ' ' + playerCirclesIndexes[i]);
@@ -113,20 +111,26 @@ function onCircleClick(e){
 			}
 			else
 				finishGame('You lost');
-			for(let i = 0; i < circles.length; i++)
-				circles[i].removeEventListener("click", onCircleClick);
-			return;
+			enableAndDisableElements();
 		}
 	}	
 }
 
 function finishGame(message){
 	clearTimeout(setTimeoutFunc);
+	enableAndDisableElements();
 	if(level > highScore){
 		document.getElementById('highScore').innerHTML = 'Highscore: ' + level;
 		localStorage.setItem("highScore", level);
 	}
 	setTimeout(() => {alert(message);}, 50);
+}
+
+function enableAndDisableElements(){
+	document.getElementById('showSolution').disabled = false;
+	document.getElementById('resetBtn').disabled = true;
+	for(let i = 0; i < circles.length; i++)
+		circles[i].removeEventListener("click", onCircleClick);
 }
 
 function combinations(arr, len, startPosition, result){
