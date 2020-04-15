@@ -1,5 +1,5 @@
 ### shortest-longest-path
-Time game. Connect points in the shortest or longest path. Level hardness will increase. How far can you get? Just click on the circles.
+Time game. Connect points in the shortest or longest path. Level difficulty will be increasing. How far can you get? Just click on the circles.
 
 ### Example
 
