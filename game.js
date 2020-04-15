@@ -219,9 +219,9 @@ function generateCirclePositions(){
 
 function generateLevelParams(){
 	let minMaxGreen = parseInt(level / 10) + 3 < maxCircles ? parseInt(level / 10) + 3 : maxCircles;
-	let randMaxGreen = getRandomInt(maxCircles - minMaxGreen) + minMaxGreen;
+	let randMaxGreen = getRandomInt(maxCircles - minMaxGreen + 1) + minMaxGreen;
 	maxGreen = randMaxGreen;
-	numberOfCirlcles = randMaxGreen + getRandomInt(maxCircles - randMaxGreen);
+	numberOfCirlcles = randMaxGreen + getRandomInt(maxCircles - randMaxGreen + 1);
 	isFindingTheShortest = getRandomInt(2);
 	let hardness = maxGreen * greenCoef + numberOfCirlcles;
 	hardness += isFindingTheShortest ? 0 : Math.round(hardness / maxHardness * maxLongestHardness);	
