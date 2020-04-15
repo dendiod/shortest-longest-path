@@ -32,11 +32,11 @@ function showSolution(){
 	let btn = document.getElementById('showSolution');
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	if(btn.innerHTML == 'Show the best solution'){		
-		buildPath(bestIndexes, 'green');
+		buildPath(bestIndexes, 'chartreuse');
 		btn.innerHTML = 'Show my solution';
 	}
 	else{
-		buildPath(playerCirclesIndexes, 'blue');
+		buildPath(playerCirclesIndexes, 'yellow');
 		btn.innerHTML = 'Show the best solution';
 	}
 }
@@ -91,7 +91,7 @@ function getRandomInt(max) {
 function onCircleClick(e){	
 	e.target.removeEventListener("click", onCircleClick);
 	playerCirclesIndexes.push(Array.from(circles).indexOf(e.target));	
-	e.target.style.background = 'blue';
+	e.target.style.background = 'yellow';
 	let length = playerCirclesIndexes.length;
 	e.target.innerHTML = length;
 	if(length > 1){	
