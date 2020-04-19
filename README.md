@@ -7,3 +7,6 @@ Run index.html in browser
 ### Example
 
 ![Example](https://github.com/dendiod/shortest-longest-path/blob/master/example.PNG)
+
+### License
+MIT
